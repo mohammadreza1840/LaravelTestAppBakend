@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Ver1;
 
+use App\Models\ExtraData;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TestsCollection extends ResourceCollection
@@ -16,7 +17,11 @@ class TestsCollection extends ResourceCollection
     {
         return [
             'data'=>$this->collection->map(function($item){
-                return ['title'=>$item->title,'shortDescriptions' => $item->shortDescription];
+                return [
+                    'title'=>$item->title,
+                    'shortDescriptions' => $item->shortDescription,
+                    'source'=>ExtraData::where('id',$item->id)->get('source')
+                ];
             }),
         ];
     }

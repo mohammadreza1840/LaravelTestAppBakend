@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Ver1;
 
+use App\Models\Test;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Category extends JsonResource
@@ -16,7 +17,7 @@ class Category extends JsonResource
     {
         return [
             'title'=> $this->title,
-            'tests'=>new TestsCollection($this->tests),
+            'tests'=> ($test = new TestsCollection($this->tests)),
         ];
     }
 }
