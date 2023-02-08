@@ -20,9 +20,9 @@ return new class extends Migration
             $table->text("longDescriptions");
             $table->tinyInteger("isActive");
             $table->unsignedBigInteger("category_id");//R
-            $table->unsignedBigInteger("extradata_id");//R
+            $table->unsignedBigInteger("extra_data_id");//R
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('extradata_id')->references('id')->on('extradata')->onDelete('cascade');
+            $table->foreign('extra_data_id')->references('id')->on('extra_data')->onDelete('cascade');
 
             
             $table->timestamps();

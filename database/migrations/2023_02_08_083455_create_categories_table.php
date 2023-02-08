@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->text("title");
             $table->tinyInteger("isActive");
-            $table->unsignedBigInteger("extradata_id");//R
-            $table->foreign('extradata_id')->references('id')->on('extradata')->onDelete('cascade');
+            $table->unsignedBigInteger("extra_data_id");//R
+            $table->foreign('extra_data_id')->references('id')->on('extra_data')->onDelete('cascade');
             $table->timestamps();
         });
     }
