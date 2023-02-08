@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Indicator extends Model
 {
     use HasFactory;
-    protected $fillable =['title','testID'];
+    protected $fillable =['title'];
 }
