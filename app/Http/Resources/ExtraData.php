@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Ver1;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Category extends JsonResource
+class ExtraData extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,8 +15,7 @@ class Category extends JsonResource
     public function toArray($request)
     {
         return [
-            'title'=> $this->title,
-            'tests'=>new TestsCollection($this->tests),
+            'source'=>$this->source
         ];
     }
 }

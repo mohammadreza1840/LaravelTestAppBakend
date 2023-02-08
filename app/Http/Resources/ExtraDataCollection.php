@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Ver1;
+namespace App\Http\Resources;
 
-use App\Http\Resources\ExtraDataCollection;
-use App\Models\ExtraData;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class CategoryCollection extends ResourceCollection
+class ExtraDataCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -18,10 +16,7 @@ class CategoryCollection extends ResourceCollection
     {
         return [
             'data'=>$this->collection->map(function($item){
-                return [
-                    'title'=>$item->title,
-                    'source'=>ExtraData::where('id',$item->id)->get('source')
-                ];
+                return ['source' => $item->source];
             }),
         ];
     }

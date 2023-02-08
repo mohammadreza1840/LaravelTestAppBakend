@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable=['title','isActive','extradata_id'];
+    protected $fillable=['title','isActive'];
 
     public function tests(){
         return $this->hasMany(Test::class);
     }
+
+
 }
 
 

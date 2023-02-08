@@ -9,4 +9,7 @@ class ExtraData extends Model
 {
     use HasFactory;
     protected $fillable = ['title','source','thumbnailSource'];
+    public function categories(){
+        return $this->hasMany(Category::class);
+    }
 }
