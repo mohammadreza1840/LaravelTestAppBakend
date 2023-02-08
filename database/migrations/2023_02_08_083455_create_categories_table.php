@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->text("title");
-            $table->tinyInteger("isActive");
+            $table->tinyInteger("isActive")->default('1');
             $table->unsignedBigInteger("extra_data_id");//R
             $table->foreign('extra_data_id')->references('id')->on('extra_data')->onDelete('cascade');
             $table->timestamps();

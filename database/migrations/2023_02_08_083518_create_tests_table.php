@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text("title");
             $table->text("shortDescriptions");
             $table->text("longDescriptions");
-            $table->tinyInteger("isActive");
+            $table->tinyInteger("isActive")->default('1');;
             $table->unsignedBigInteger("category_id");//R
             $table->unsignedBigInteger("extra_data_id");//R
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
