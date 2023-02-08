@@ -17,7 +17,7 @@ class Category extends JsonResource
     {
         return [
             'title'=> $this->title,
-            'tests'=> ($test = new TestsCollection($this->tests)),
+            'tests'=> new TestsCollection($this->tests),
         ];
     }
 }

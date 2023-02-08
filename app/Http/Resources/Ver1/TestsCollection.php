@@ -19,7 +19,7 @@ class TestsCollection extends ResourceCollection
             'data'=>$this->collection->map(function($item){
                 return [
                     'title'=>$item->title,
-                    'shortDescriptions' => $item->shortDescription,
+                    'shortDescriptions' => $item->shortDescriptions,
                     'source'=>ExtraData::where('id',$item->id)->get('source')
                 ];
             }),
