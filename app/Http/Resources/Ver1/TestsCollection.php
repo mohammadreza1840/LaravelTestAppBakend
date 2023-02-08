@@ -20,7 +20,7 @@ class TestsCollection extends ResourceCollection
                 return [
                     'title'=>$item->title,
                     'shortDescriptions' => $item->shortDescriptions,
-                    'source'=>ExtraData::where('id',$item->id)->get('source')
+                    'source'=>ExtraData::where('id',$item->extra_data_id)->get('source')
                 ];
             }),
         ];
