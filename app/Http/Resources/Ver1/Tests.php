@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Ver1;
 
+use App\Http\Resources\ver1\QuestionCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Tests extends JsonResource
@@ -14,6 +15,16 @@ class Tests extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'title'=> $this->title,
+            'shortDescriptions'=>$this->shortDescriptions,
+            'longDescriptions'=>$this->longDescriptions,
+            'isActive'=>$this->isActive,
+            'category_id'=>$this->category_id,
+            'extradata_id'=>$this->extradata_id,
+            'created_at'=>$this->created_at,
+            'updated_at'=>$this->updated_at,
+            'questions'=> new QuestionCollection($this->questions),
+        ];
     }
 }

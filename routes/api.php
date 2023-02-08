@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->namespace('App\Http\Controllers\Api\v1')->group(function(){
     Route::get('/categories','CategoryController@index');
     Route::get('/categories/{category}','CategoryController@single');
+
+    Route::get('/tests/{test}','TestController@single');
 });
 
 
