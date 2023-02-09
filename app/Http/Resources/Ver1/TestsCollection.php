@@ -18,6 +18,7 @@ class TestsCollection extends ResourceCollection
         return [
             'data'=>$this->collection->map(function($item){
                 return [
+                    'id'=>$item->id,
                     'title'=>$item->title,
                     'shortDescriptions' => $item->shortDescriptions,
                     'imageSource'=>ExtraData::find($item->extra_data_id)->source

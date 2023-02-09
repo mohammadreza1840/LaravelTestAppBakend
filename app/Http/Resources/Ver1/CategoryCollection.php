@@ -19,6 +19,7 @@ class CategoryCollection extends ResourceCollection
         return [
             'data'=>$this->collection->map(function($item){
                 return [
+                    'id'=> $item->id,
                     'title'=>$item->title,
                     'source'=>ExtraData::where('id',$item->extra_data_id)->get('source')
                 ];
